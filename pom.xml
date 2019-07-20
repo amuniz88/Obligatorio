@@ -11,6 +11,12 @@
     <properties>
         <selenium.version>3.141.59</selenium.version>
         <testng.version>6.14.3</testng.version>
+        <compiler.version>3.8.0</compiler.version>
+        <surefire.version>2.19.1</surefire.version>
+        <resources.version>3.1.0</resources.version>
+        <webdriver.extension.plugin.version>3.1.1</webdriver.extension.plugin.version>
+        <webdriverextencion.version>3.3.0</webdriverextencion.version>
+        <version.chromdriver>75.0.3770.90</version.chromdriver>
     </properties>
 
     <dependencies>
@@ -27,6 +33,81 @@
             <version>${testng.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.github.webdriverextensions</groupId>
+            <artifactId>webdriverextensions</artifactId>
+            <version>${webdriverextencion.version}</version>
+        </dependency>
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${compiler.version}</version>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${surefire.version}</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>src/test/java/xml/OBL_Test.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>${resources.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>com.github.webdriverextensions</groupId>
+                <artifactId>webdriverextensions-maven-plugin</artifactId>
+                <version>${webdriver.extension.plugin.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>install-drivers</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <drivers>
+                        <driver>
+                            <name>chromedriver</name>
+                            <version>${version.chromdriver}</version>
+                            <platform>mac</platform>
+                        </driver>
+                        <driver>
+                            <name>chromedriver</name>
+                            <version>${version.chromdriver}</version>
+                            <platform>windows</platform>
+                        </driver>
+                        <driver>
+                            <name>geckodriver</name>
+                            <platform>windows</platform>
+                            <bit>64</bit>
+                        </driver>
+                        <driver>
+                            <name>geckodriver</name>
+                            <platform>windows</platform>
+                            <bit>32</bit>
+                        </driver>
+                        <driver>
+                            <name>geckodriver</name>
+                            <platform>mac</platform>
+                            <bit>64</bit>
+                        </driver>
+                    </drivers>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

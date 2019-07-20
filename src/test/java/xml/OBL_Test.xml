@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SuiteTesst-Obligatorio" parallel="tests" thread-count="2">
+    <parameter name="pass" value="123456"/>
+    <parameter name="user" value="s.savat@gmail.com"></parameter>
+    <test name="Test in Chrome">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+<!--            <class name="tests.TestRegistroUsuario">-->
+<!--                <methods>-->
+<!--                    <include name="registraUsuario"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+            <class name="tests.TestCases">
+                <methods>
+                    <include name="checkoutEfectivo"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+<!--    <test name="Test in Firefox">-->
+<!--        <parameter name="browser" value="firefox"></parameter>-->
+<!--        <classes>-->
+
+<!--        </classes>-->
+<!--    </test>-->
+</suite>
