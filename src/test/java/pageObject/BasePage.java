@@ -27,6 +27,7 @@ public class BasePage extends BasePO{
     public LogIn clickToLogin(){
         return bar.clickInLogin();
     }
+    public HomePage clickToLogout() { return bar.clickInLogout(); }
     public SearchResult goTobuscarProducto(String producto){
         return search.buscarProducto(producto);
     }

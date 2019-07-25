@@ -54,11 +54,6 @@ public class SeleniumUtils {
         return elements;
     }
 
-    /***
-     * Hace scroll del elemento para ponerlo dentro de la vista
-     * @param driver
-     * @param webElement
-     */
     public static void scrollIntoView(WebDriver driver, WebElement webElement){
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("arguments[0].scrollIntoView(true);", webElement);

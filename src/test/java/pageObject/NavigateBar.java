@@ -22,6 +22,9 @@ public class NavigateBar {
     @FindBy(partialLinkText = "Log in")
     WebElement linkLogin;
 
+    @FindBy(partialLinkText = "Log out")
+    WebElement linkLogout;
+
     public NavigateBar(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, 10);
@@ -44,5 +47,10 @@ public class NavigateBar {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h1")));
 
         return new LogIn(driver);
+    }
+
+    public HomePage clickInLogout(){
+        SeleniumUtils.clickElement(linkLogout, wait);
+        return new HomePage(driver);
     }
 }

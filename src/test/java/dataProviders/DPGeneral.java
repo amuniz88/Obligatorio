@@ -2,6 +2,8 @@ package dataProviders;
 
 import org.testng.annotations.DataProvider;
 
+import java.lang.reflect.Method;
+
 public class DPGeneral {
 
     @DataProvider(name = "DP_Usuario")
@@ -12,9 +14,17 @@ public class DPGeneral {
     }
 
     @DataProvider(name = "DP_Producto")
-    public Object[][] dpProducto(){
-        return new Object[][]{
-            {"Shoes", "22", "azul", "2", "1", "234", "21654", "1", "2", "visa", "Bestcard", "4348630111063811", "6", "2025", "202", true, false}
-        };
+    public Object[][] dpProducto(Method method){
+        Object[][] datos = null;
+        if(method.getName().equalsIgnoreCase("checkoutEfectivo")) {
+            datos = new Object[][]{
+                    {"adidas", "22", "azul", "2", "1", "234", "21654", "1", "2", "visa", "Bestcard", "4348630111063811", "6", "2025", "202", true, false}
+            };
+        }else if(method.getName().equalsIgnoreCase("checkoutTarjeta")){
+            datos = new Object[][]{
+                    {"Hat", "36", "", "1", "2", "234", "21654", "1", "1", "visa", "Bestcard", "4348630111063811", "6", "2025", "202", true, false}
+            };
+        }
+        return datos;
     }
 }

@@ -6,72 +6,64 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SearchResult extends BasePage{
 
-    @FindBy(css = "[data-productid=\"25\"]")
-    WebElement productID;
+    @FindBy(className = "product-box-add-to-cart-button")
+    WebElement btn_AddToCart;
 
-    @FindBy(id = "product_attribute_9")
-    WebElement combo_Size;
+    @FindBy(className = "product-item")
+    List<WebElement> listElementos;
 
-    @FindBy(id = "add-to-cart-button-25")
-    WebElement btn_Add;
-
-    @FindBy(css = "[title=\"Red\"]")
-    WebElement colorRed;
-
-    @FindBy(css = "[title=\"Blue\"]")
-    WebElement colorBlue;
-
-    @FindBy(css = "[title=\"Silver\"]")
-    WebElement colorSilver;
-
-    @FindBy(css = ".content [href=\"/cart\"]")
-    WebElement lnk_ShopCart;
-
-    @FindBy(className = "product-price")
-    WebElement precio;
-
-    @FindBy(className = "qty-input")
-//    @FindBy(className = "qty-label")
-//    @FindBy(className = "add-to-cart-panel")
-    WebElement cantidad;
+    List<ProductItem> product;
 
     public SearchResult(WebDriver driver){
         super(driver);
+        product = new ArrayList<>();
+        for(WebElement element : listElementos){
+            product.add(new ProductItem(element));
+        }
     }
 
-    public ShoppingCart addToCart(String size, String color, String cant){
-        clickElement(productID);
+    public ProductDetail selectProd(String elemento){
+        for(ProductItem prod : product){
+            if(prod.getName().contains(elemento)){
+                clickElement(btn_AddToCart);
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("stock-availability-value-25")));
-
-        selectByValue(combo_Size, size);
-
-        switch (color){
-            case "azul":
-                clickElement(colorBlue);
-                break;
-            case "rojo":
-                clickElement(colorRed);
-                break;
-            case "plata":
-                clickElement(colorSilver);
-                break;
+                wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("gallery")));
+            }
         }
-        setText(cantidad, cant);
 
-        order.setCantidad(Integer.valueOf(cant));
-        order.setPrecio(Double.valueOf(precio.getText().replace("$", "")));
-
-        clickElement(btn_Add);
-
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("bar-notification")));
-
-        clickElement(lnk_ShopCart);
-
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h1")));
-
-        return new ShoppingCart(driver);
+//        selectByValue(combo_Size, size);
+//
+//        switch (color){
+//            case "azul":
+//                clickElement(colorBlue);
+//                break;
+//            case "rojo":
+//                clickElement(colorRed);
+//                break;
+//            case "plata":
+//                clickElement(colorSilver);
+//                break;
+//        }
+//
+//        setText(cantidad, cant);
+//
+//        order.setCantidad(Integer.valueOf(cant));
+//        order.setPrecio(Double.valueOf(precio.getText().replace("$", "")));
+//
+//        clickElement(btn_Add);
+//
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("bar-notification")));
+//
+//        clickElement(lnk_ShopCart);
+//
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h1")));
+//
+//        return new ShoppingCart(driver);
+        return new ProductDetail(driver);
     }
 }

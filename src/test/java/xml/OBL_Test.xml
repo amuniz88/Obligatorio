@@ -14,6 +14,7 @@
             <class name="tests.TestCases">
                 <methods>
                     <include name="checkoutEfectivo"/>
+                    <include name="checkoutTarjeta"/>
                 </methods>
             </class>
         </classes>

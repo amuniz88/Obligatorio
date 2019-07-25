@@ -27,7 +27,7 @@ public class ShoppingCart extends BasePage{
         super(driver);
     }
 
-    public Checkout checkoutShoes(String gift, String country, String postal, boolean term){
+    public Checkout checkoutProd(String gift, String country, String postal, boolean term){
 
         if(gift.equalsIgnoreCase("2")){
             order.setGift(true);

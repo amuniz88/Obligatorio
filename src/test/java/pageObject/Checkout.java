@@ -43,6 +43,7 @@ public class Checkout extends BasePage{
     WebElement btn_Continuar5;
 
     @FindBy(className = "confirm-order-next-step-button")
+//    @FindBy(xpath = "//input[@onclick='ConfirmOrder.save()']")
     WebElement btn_ContinuarFinal;
 
     @FindBy(how = How.ID, using = "CreditCardType")
@@ -66,11 +67,9 @@ public class Checkout extends BasePage{
     @FindBy(partialLinkText = "Click here for order details.")
     WebElement linkOrderDetails;
 
-//    MyOrder order;
 
     public Checkout(WebDriver driver){
         super(driver);
-//        order = new MyOrder(driver);
     }
 
     //Paso 1
@@ -138,16 +137,17 @@ public class Checkout extends BasePage{
 
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("order-review-data")));
         }
+        scrollIntoView(btn_ContinuarFinal);
+
         clickElement(btn_ContinuarFinal);
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[class='order-number']")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("order-number")));
     }
 
     public MyOrder confirmOrder(){
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("order-number")));
-
         order.setNumOrder(Integer.valueOf(findElement(By.className("order-number")).getText().replace("ORDER NUMBER: ", "")));
 
         clickElement(linkOrderDetails);
-
         return new MyOrder(driver);
     }
 }

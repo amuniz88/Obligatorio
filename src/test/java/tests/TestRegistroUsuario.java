@@ -12,7 +12,7 @@ public class TestRegistroUsuario extends BaseTest{
         registroU.completarDatosUsuario(email, sexo, name, apellido, day, month, year, company, pass, conPass, check);
 
         Assert.assertTrue(registroU.messageIsDisplayed());
-        Assert.assertTrue(registroU.messageContains("Your registration completed"));
+        Assert.assertTrue(registroU.messageContains("Your registration completed"));  //porque el usuario ya esta registrado
         Assert.assertTrue(registroU.subTitleIsDisplayed());
         Assert.assertTrue(registroU.subTitleContains("Register"));
         Assert.assertTrue(registroU.continueIsDisplayed());

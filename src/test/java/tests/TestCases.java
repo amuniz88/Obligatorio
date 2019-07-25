@@ -10,19 +10,45 @@ public class TestCases extends BaseTestWhitLogin{
     public void checkoutEfectivo(String producto, String size, String color, String gift, String cant, String country, String postal, String r_shopp, String r_Pay, String cardType, String cardNom, String cardNum, String expMonth, String expYear, String cardCode, boolean term, boolean samAddress){
         searchR = homePage.goTobuscarProducto(producto);
 
-        shopCart = searchR.addToCart(size, color, cant);
+        prodDet = searchR.selectProd(producto);
 
-        check = shopCart.checkoutShoes(gift, country, postal, term);
+        shopCart = prodDet.addToCart(size, color, cant);
+
+        check = shopCart.checkoutProd(gift, country, postal, term);
         check.billingAddress(samAddress);
         check.shippingAddress();
         check.shippingMethod(r_shopp);
         check.paymentMethod(r_Pay, cardType, cardNom, cardNum, expMonth, expYear, cardCode);
-
         order = check.confirmOrder();
+
         Assert.assertTrue(order.verifyConfirmedOrder());
         Assert.assertTrue(order.datesOrderIsDisplayed());
         Assert.assertTrue(order.nameContainsProduct(producto));
         Assert.assertTrue(order.priceProduct());
         Assert.assertTrue(order.priceProductMasGift());
+
+        homePage.clickToLogout();
+    }
+
+    @Test(dataProvider = "DP_Producto", dataProviderClass = DPGeneral.class)
+    public void checkoutTarjeta(String producto, String size, String color, String gift, String cant, String country, String postal, String r_shopp, String r_Pay, String cardType, String cardNom, String cardNum, String expMonth, String expYear, String cardCode, boolean term, boolean samAddress){
+        searchR = homePage.goTobuscarProducto(producto);
+        prodDet = searchR.selectProd(producto);
+        shopCart = prodDet.addToCart(size, color, cant);
+
+        check = shopCart.checkoutProd(gift, country, postal, term);
+        check.billingAddress(samAddress);
+        check.shippingAddress();
+        check.shippingMethod(r_shopp);
+        check.paymentMethod(r_Pay, cardType, cardNom, cardNum, expMonth, expYear, cardCode);
+        order = check.confirmOrder();
+
+        Assert.assertTrue(order.verifyConfirmedOrder());
+        Assert.assertTrue(order.datesOrderIsDisplayed());
+        Assert.assertTrue(order.nameContainsProduct(producto));
+        Assert.assertTrue(order.priceProduct());
+        Assert.assertTrue(order.priceProductMasGift());
+
+        homePage.clickToLogout();
     }
 }
