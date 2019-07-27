@@ -11,10 +11,15 @@
 <!--                    <include name="registraUsuario"/>-->
 <!--                </methods>-->
 <!--            </class>-->
-            <class name="tests.TestCases">
+<!--            <class name="tests.TestCases">-->
+<!--                <methods>-->
+<!--                    <include name="checkoutEfectivo"/>-->
+<!--                    <include name="checkoutTarjeta"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+            <class name="tests.TestAddToWishList">
                 <methods>
-                    <include name="checkoutEfectivo"/>
-                    <include name="checkoutTarjeta"/>
+                    <include name="addToWishList"/>
                 </methods>
             </class>
         </classes>

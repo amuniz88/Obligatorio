@@ -17,6 +17,9 @@ public class SearchResult extends BasePage{
     @FindBy(className = "product-item")
     List<WebElement> listElementos;
 
+    @FindBy(id = "bar-notification")
+    WebElement notificationBar;
+
     List<ProductItem> product;
 
     public SearchResult(WebDriver driver){
@@ -35,35 +38,17 @@ public class SearchResult extends BasePage{
                 wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("gallery")));
             }
         }
-
-//        selectByValue(combo_Size, size);
-//
-//        switch (color){
-//            case "azul":
-//                clickElement(colorBlue);
-//                break;
-//            case "rojo":
-//                clickElement(colorRed);
-//                break;
-//            case "plata":
-//                clickElement(colorSilver);
-//                break;
-//        }
-//
-//        setText(cantidad, cant);
-//
-//        order.setCantidad(Integer.valueOf(cant));
-//        order.setPrecio(Double.valueOf(precio.getText().replace("$", "")));
-//
-//        clickElement(btn_Add);
-//
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("bar-notification")));
-//
-//        clickElement(lnk_ShopCart);
-//
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h1")));
-//
-//        return new ShoppingCart(driver);
         return new ProductDetail(driver);
+    }
+
+    public void addToWishList(String prodItem1){
+        for(int i = 0; i < product.size(); i++){
+            if(product.get(i).getName().contains(prodItem1)){
+                product.get(i).addToWish();
+                wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("bar-notification")));
+                wait.until(ExpectedConditions.invisibilityOf(notificationBar));
+                break;
+            }
+        }
     }
 }

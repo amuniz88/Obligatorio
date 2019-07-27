@@ -26,6 +26,7 @@ public class BaseTest {
     protected FinalCheckout finCheck;
     protected LogIn login;
     protected ProductDetail prodDet;
+    protected WishList wishList;
 
     protected GetProperties properties = new GetProperties();
 

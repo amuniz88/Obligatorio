@@ -25,6 +25,9 @@ public class NavigateBar {
     @FindBy(partialLinkText = "Log out")
     WebElement linkLogout;
 
+    @FindBy(partialLinkText = "Wishlist")
+    WebElement linkWishList;
+
     public NavigateBar(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, 10);
@@ -52,5 +55,10 @@ public class NavigateBar {
     public HomePage clickInLogout(){
         SeleniumUtils.clickElement(linkLogout, wait);
         return new HomePage(driver);
+    }
+
+    public WishList clickInWishList(){
+        SeleniumUtils.clickElement(linkWishList , wait);
+        return new WishList(driver);
     }
 }

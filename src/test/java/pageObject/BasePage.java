@@ -31,6 +31,7 @@ public class BasePage extends BasePO{
     public SearchResult goTobuscarProducto(String producto){
         return search.buscarProducto(producto);
     }
+    public WishList goToWishList(){ return bar.clickInWishList(); }
 
     public void clickElement(WebElement webElement){
         SeleniumUtils.clickElement(webElement, wait);
