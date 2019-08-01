@@ -27,6 +27,7 @@ public class BaseTest {
     protected LogIn login;
     protected ProductDetail prodDet;
     protected WishList wishList;
+    protected CompareList compareList;
 
     protected GetProperties properties = new GetProperties();
 

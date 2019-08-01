@@ -11,6 +11,7 @@ import java.util.List;
 public class BasePage extends BasePO{
 
     protected NavigateBar bar;
+    protected NavigateFooter navFoot;
     protected Search search;
     protected Order order;
 
@@ -19,6 +20,7 @@ public class BasePage extends BasePO{
         bar = new NavigateBar(driver);
         search = new Search(driver);
         order = new Order();
+        navFoot = new NavigateFooter(driver);
     }
 
     public PORegistrarUsuario clickToRegister(){
@@ -32,6 +34,7 @@ public class BasePage extends BasePO{
         return search.buscarProducto(producto);
     }
     public WishList goToWishList(){ return bar.clickInWishList(); }
+    public CompareList goToCompareList(){ return navFoot.clickInCompareProducts(); }
 
     public void clickElement(WebElement webElement){
         SeleniumUtils.clickElement(webElement, wait);

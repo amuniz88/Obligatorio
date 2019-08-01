@@ -41,12 +41,25 @@ public class SearchResult extends BasePage{
         return new ProductDetail(driver);
     }
 
-    public void addToWishList(String prodItem1){
+    public void addToWishList(String prodItem){
         for(int i = 0; i < product.size(); i++){
-            if(product.get(i).getName().contains(prodItem1)){
+            if(product.get(i).getName().contains(prodItem)){
                 product.get(i).addToWish();
                 wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("bar-notification")));
                 wait.until(ExpectedConditions.invisibilityOf(notificationBar));
+                break;
+            }
+        }
+    }
+
+    public void addToCompareList(String prodItem){
+        for(int i = 0; i < product.size(); i++){
+            if(product.get(i).getName().contains(prodItem)){
+                product.get(i).addToCompare();
+                wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("bar-notification")));
+//                if(i != product.size()-1) {
+                    wait.until(ExpectedConditions.invisibilityOf(notificationBar));
+//                }
                 break;
             }
         }

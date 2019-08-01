@@ -17,4 +17,8 @@ public class ProductItem {
     public void addToWish(){
         element.findElement(By.className("add-to-wishlist-button")).click();
     }
+
+    public void addToCompare() {
+        element.findElement(By.className("add-to-compare-list-button")).click();
+    }
 }

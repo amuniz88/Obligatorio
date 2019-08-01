@@ -28,16 +28,16 @@ public class DPGeneral {
         return datos;
     }
 
-    @DataProvider(name = "DP_WishList")
-    public Object[][] dpWushList(Method method){
+    @DataProvider(name = "DP_ProductList")
+    public Object[][] dpProductList(Method method){
         Object[][] datos = null;
-        if(method.getName().equalsIgnoreCase("addToWishList")){
+        if(method.getName().equalsIgnoreCase("addToWishList") || method.getName().equalsIgnoreCase("compareProduct")){
             datos = new Object[][]{
                     {"Digital", "VANQUISH", "Leica"},
-                    {"Laptop", "Asus", "Lenovo"},
-                    {"Sound", "Speaker", "Forge"},
-                    {"Book", "HP", "Samsung"},
-                    {"HTC", "M8", "Blue"}
+//                    {"Laptop", "Asus", "Lenovo"},
+//                    {"Sound", "Speaker", "Forge"},
+//                    {"Book", "HP", "Samsung"},
+//                    {"HTC", "M8", "Blue"}
             };
         }
         return datos;

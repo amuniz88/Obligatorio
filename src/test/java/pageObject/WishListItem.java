@@ -28,11 +28,4 @@ public class WishListItem {
         String totalPrice = element.findElement(By.cssSelector("td:nth-child(8) span")).getText().replace("$", "");
         return Double.valueOf(totalPrice.replace(",", ""));
     }
-//    public void addToCart(){
-//        element.findElement(By.cssSelector("button[data-original-title='Add to Cart']")).click();
-//    }
-//
-//    public void delete(){
-//        element.findElement(By.cssSelector("button[data-original-title='Remove']")).click();
-//    }
 }
