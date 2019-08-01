@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="SuiteTesst-Obligatorio" parallel="tests" thread-count="2">
-    <parameter name="pass" value="1234567810"/>
+    <parameter name="pass" value="123456"/>
     <parameter name="user" value="s.savat@gmail.com"></parameter>
     <test name="Test in Chrome">
         <parameter name="browser" value="chrome"/>
@@ -28,12 +28,12 @@
 <!--                </methods>-->
 <!--            </class>-->
 
-            <class name="tests.TestChangeMyAccount">
-                <methods>
-                    <include name="modifyUserInfo"/> <!-- CP9-->
-                    <include name="changePassword"/> <!-- CP10-->
-                </methods>
-            </class>
+<!--            <class name="tests.TestChangeMyAccount">-->
+<!--                <methods>-->
+<!--                    <include name="modifyUserInfo"/> &lt;!&ndash; CP9&ndash;&gt;-->
+<!--                    <include name="changePassword"/> &lt;!&ndash; CP10&ndash;&gt;-->
+<!--                </methods>-->
+<!--            </class>-->
         </classes>
     </test>
 <!--    <test name="Test in Firefox">-->

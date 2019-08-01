@@ -23,9 +23,17 @@ public class TestChangeMyAccount extends BaseTestWhitLogin{
     }
 
     @Test(dataProvider = "DP_MyAccount", dataProviderClass = DPGeneral.class)
-    public void modifyUserInfo(){
+    public void modifyUserInfo(String day, String month, String year){
         myAccount = homePage.goToMyAccount();
 
+        myAccount.changeUserInfo(day, month, year);
 
+        Assert.assertTrue(myAccount.subTitleIsDisplayed());
+        Assert.assertTrue(myAccount.subTitleContains("My account - Customer info"));
+        Assert.assertTrue(myAccount.dateOfBirthDay(day));
+        Assert.assertTrue(myAccount.dateOfBirthMonth(month));
+        Assert.assertTrue(myAccount.dateOfBirthYear(year));
+
+        homePage.clickToLogout();
     }
 }

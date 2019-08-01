@@ -52,6 +52,10 @@ public class DPGeneral {
                     {"123456", "123456", "123456", "You entered the password that is the same as one of the last passwords you used. Please create a new password.", false},
                     {"123456", "1234567", "1234567", "Password was changed", true}
             };
+        }else if(method.getName().equalsIgnoreCase("modifyUserInfo")){
+            datos = new Object[][]{
+                    {"1", "4", "2000"}
+            };
         }
         return datos;
     }
