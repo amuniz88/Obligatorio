@@ -34,10 +34,10 @@ public class DPGeneral {
         if(method.getName().equalsIgnoreCase("addToWishList") || method.getName().equalsIgnoreCase("compareProduct")){
             datos = new Object[][]{
                     {"Digital", "VANQUISH", "Leica"},
-//                    {"Laptop", "Asus", "Lenovo"},
-//                    {"Sound", "Speaker", "Forge"},
-//                    {"Book", "HP", "Samsung"},
-//                    {"HTC", "M8", "Blue"}
+                    {"Laptop", "Asus", "Lenovo"},
+                    {"Sound", "Speaker", "Forge"},
+                    {"Book", "HP", "Samsung"},
+                    {"HTC", "M8", "Blue"}
             };
         }
         return datos;

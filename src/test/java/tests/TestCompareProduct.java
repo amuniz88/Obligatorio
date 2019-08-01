@@ -20,6 +20,8 @@ public class TestCompareProduct extends BaseTestWhitLogin{
         Assert.assertTrue(compareList.subtitleContains("Compare products"));
         Assert.assertTrue(compareList.subTitleIsDisplayed());
 
+        compareList.clearList();
+
         homePage.clickToLogout();
     }
 

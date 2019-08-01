@@ -8,12 +8,16 @@ import org.openqa.selenium.support.FindBy;
 import java.util.ArrayList;
 import java.util.List;
 
+import static utils.SeleniumUtils.clickElement;
 import static utils.SeleniumUtils.findElements;
 
 public class CompareList extends BasePO{
 
     @FindBy(tagName = "h1")
     WebElement subtitle;
+
+    @FindBy(className = "clear-list")
+    WebElement btn_ClearList;
 
     List<CompareListItem> prodName;
 
@@ -50,5 +54,9 @@ public class CompareList extends BasePO{
 
     public boolean subtitleContains(String contenido){
         return subtitle.getText().contains(contenido);
+    }
+
+    public void clearList(){
+        clickElement(btn_ClearList, wait);
     }
 }

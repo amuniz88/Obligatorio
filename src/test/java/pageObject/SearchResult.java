@@ -57,9 +57,7 @@ public class SearchResult extends BasePage{
             if(product.get(i).getName().contains(prodItem)){
                 product.get(i).addToCompare();
                 wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("bar-notification")));
-//                if(i != product.size()-1) {
                     wait.until(ExpectedConditions.invisibilityOf(notificationBar));
-//                }
                 break;
             }
         }

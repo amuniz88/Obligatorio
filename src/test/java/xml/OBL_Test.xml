@@ -22,16 +22,16 @@
 <!--                    <include name="addToWishList"/> &lt;!&ndash;CP4&ndash;&gt;-->
 <!--                </methods>-->
 <!--            </class>-->
-<!--            <class name="tests.TestCompareProduct">-->
-<!--                <methods>-->
-<!--                    <include name="compareProduct"/> &lt;!&ndash;CP5&ndash;&gt;-->
-<!--                </methods>-->
-<!--            </class>-->
-            <class name="">
+            <class name="tests.TestCompareProduct">
                 <methods>
-                    <include name=""/>
+                    <include name="compareProduct"/> <!--CP5-->
                 </methods>
             </class>
+<!--            <class name="tests.TestChangeMyAccount">-->
+<!--                <methods>-->
+<!--                    <include name=""/>-->
+<!--                </methods>-->
+<!--            </class>-->
         </classes>
     </test>
 <!--    <test name="Test in Firefox">-->
