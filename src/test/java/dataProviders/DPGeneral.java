@@ -42,4 +42,17 @@ public class DPGeneral {
         }
         return datos;
     }
+
+    @DataProvider(name = "DP_MyAccount")
+    public Object[][] dpMyAccount(Method method){
+        Object[][] datos = null;
+        if(method.getName().equalsIgnoreCase("changePassword")){
+            datos = new Object[][]{
+                    {"123", "222222", "222222", "Old password doesn't match", false},
+                    {"123456", "123456", "123456", "You entered the password that is the same as one of the last passwords you used. Please create a new password.", false},
+                    {"123456", "1234567", "1234567", "Password was changed", true}
+            };
+        }
+        return datos;
+    }
 }

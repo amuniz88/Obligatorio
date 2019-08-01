@@ -13,8 +13,8 @@ public class NavigateBar {
 
     protected WebDriver driver;
     protected WebDriverWait wait;
-    protected NavigateBar bar;
-    protected static String productName;
+//    protected NavigateBar bar;
+//    protected static String productName;
 
     @FindBy(partialLinkText = "Register")
     WebElement linkRegister;
@@ -27,6 +27,9 @@ public class NavigateBar {
 
     @FindBy(partialLinkText = "Wishlist")
     WebElement linkWishList;
+
+    @FindBy(partialLinkText = "My account")
+    WebElement linkMyAccount;
 
     public NavigateBar(WebDriver driver) {
         this.driver = driver;
@@ -60,5 +63,10 @@ public class NavigateBar {
     public WishList clickInWishList(){
         SeleniumUtils.clickElement(linkWishList , wait);
         return new WishList(driver);
+    }
+
+    public MyAccount clickInMyAccount(){
+        SeleniumUtils.clickElement(linkMyAccount, wait);
+        return new MyAccount(driver);
     }
 }

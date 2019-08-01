@@ -28,6 +28,8 @@ public class BaseTest {
     protected ProductDetail prodDet;
     protected WishList wishList;
     protected CompareList compareList;
+    protected MyAccount myAccount;
+    protected ChangePassword changePass;
 
     protected GetProperties properties = new GetProperties();
 

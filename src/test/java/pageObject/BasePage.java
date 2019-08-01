@@ -12,6 +12,7 @@ public class BasePage extends BasePO{
 
     protected NavigateBar bar;
     protected NavigateFooter navFoot;
+    protected menuMyAccount menMyAc;
     protected Search search;
     protected Order order;
 
@@ -19,8 +20,9 @@ public class BasePage extends BasePO{
         super(driver);
         bar = new NavigateBar(driver);
         search = new Search(driver);
-        order = new Order();
         navFoot = new NavigateFooter(driver);
+        menMyAc = new menuMyAccount(driver);
+        order = new Order();
     }
 
     public PORegistrarUsuario clickToRegister(){
@@ -35,6 +37,8 @@ public class BasePage extends BasePO{
     }
     public WishList goToWishList(){ return bar.clickInWishList(); }
     public CompareList goToCompareList(){ return navFoot.clickInCompareProducts(); }
+    public MyAccount goToMyAccount(){ return bar.clickInMyAccount(); }
+    public ChangePassword goToClickInChangePass(){ return menMyAc.clickInChangePassword(); }
 
     public void clickElement(WebElement webElement){
         SeleniumUtils.clickElement(webElement, wait);
