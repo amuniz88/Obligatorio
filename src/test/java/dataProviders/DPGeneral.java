@@ -63,4 +63,16 @@ public class DPGeneral {
         }
         return datos;
     }
+
+    @DataProvider(name = "DP_SendEmail")
+    public Object[][] dpSendEmail(Method method){
+        Object[][] datos = null;
+        if(method.getName().equalsIgnoreCase("sendEmailToFriend")){
+            datos = new Object[][]{
+                    {"", "Estimado, buenas tardes.  Le comparto mi WishList", "Enter friend's email", false},
+                    {"obligatorio.bios@gmail.com", "Estimado, buenas tardes.  Le comparto mi WishList", "Your message has been sent.", true}
+            };
+        }
+        return datos;
+    }
 }

@@ -3,15 +3,20 @@ package pageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static utils.SeleniumUtils.findElements;
+import static utils.SeleniumUtils.*;
 
 public class WishList extends BasePO{
 
     List<WishListItem> productos;
+
+    @FindBy(className = "email-a-friend-wishlist-button")
+    WebElement btn_SendEmail;
 
     public WishList(WebDriver driver) {
         super(driver);
@@ -44,5 +49,13 @@ public class WishList extends BasePO{
             }
         }
         return false;
+    }
+
+    public EmailToFriend clickSendEmailToFriend(){
+        scrollIntoView(driver, btn_SendEmail);
+        clickElement(btn_SendEmail, wait);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h1")));
+
+        return new EmailToFriend(driver);
     }
 }

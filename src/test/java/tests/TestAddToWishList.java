@@ -22,4 +22,18 @@ public class TestAddToWishList extends BaseTestWhitLogin {
 
         homePage.clickToLogout();
     }
+
+    @Test(dataProvider = "DP_SendEmail", dataProviderClass = DPGeneral.class)
+    public void sendEmailToFriend(String email, String msg, String contenido, boolean correcto){
+        wishList = homePage.goToWishList();
+
+        emailToFriend = wishList.clickSendEmailToFriend();
+        emailToFriend.sendEmailToFriend(email, msg);
+
+        Assert.assertTrue(emailToFriend.subTitleIsDisplayed());
+        Assert.assertTrue(emailToFriend.subTitleContains(""));
+        //Asserts dobles dependiendo del contenido del DataProvider.  Se prueba envío incorrecto y envío correcto
+        Assert.assertTrue(emailToFriend.messageReturnIsDisplayed(correcto));
+        Assert.assertTrue(emailToFriend.messageReturnContains(contenido, correcto));
+    }
 }

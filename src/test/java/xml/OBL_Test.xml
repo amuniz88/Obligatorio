@@ -19,7 +19,9 @@
 <!--            </class>-->
 <!--            <class name="tests.TestAddToWishList">-->
 <!--                <methods>-->
+<!--                    <include name="sendEmailToFriend"/>-->
 <!--                    <include name="addToWishList"/> &lt;!&ndash;CP4&ndash;&gt;-->
+<!--                    <include name=""/>-->
 <!--                </methods>-->
 <!--            </class>-->
 <!--            <class name="tests.TestCompareProduct">-->
@@ -32,13 +34,13 @@
 <!--                        <include name=""/>-->
 <!--                    </methods>-->
 <!--                </class>-->
-            <class name="tests.TestChangeMyAccount">
-                <methods>
-                    <include name="addUserAddress"/> <!-- CP8-->
+<!--            <class name="tests.TestChangeMyAccount">-->
+<!--                <methods>-->
+<!--                    <include name="addUserAddress"/> &lt;!&ndash; CP8&ndash;&gt;-->
 <!--                    <include name="modifyUserInfo"/> &lt;!&ndash; CP9&ndash;&gt;-->
 <!--                    <include name="changePassword"/> &lt;!&ndash; CP10&ndash;&gt;-->
-                </methods>
-            </class>
+<!--                </methods>-->
+<!--            </class>-->
         </classes>
     </test>
 <!--    <test name="Test in Firefox">-->

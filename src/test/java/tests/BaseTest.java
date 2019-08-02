@@ -32,6 +32,7 @@ public class BaseTest {
     protected ChangePassword changePass;
     protected AddAddresses addAddress;
     protected Address address;
+    protected EmailToFriend emailToFriend;
 
     protected GetProperties properties = new GetProperties();
 

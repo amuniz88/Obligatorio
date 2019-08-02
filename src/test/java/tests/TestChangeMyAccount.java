@@ -13,7 +13,13 @@ public class TestChangeMyAccount extends BaseTestWhitLogin{
 
         changePass.changeUserPassword(oldPass, newPass, confirmPass, correct);
 
-        //3 Assert en uno dependiendo de los valores que vengan desde el DataProvider
+        /*
+        3 Assert en uno dependiendo de los valores que vengan desde el DataProvider.
+         - Test con error, se manda un caso con OldPass que no es el correcto
+         - Test con error, se intenta cambiar la contraseña ingresando la misma en los tres campos
+         - Test correcto, se cambia la contraseña correctamente
+
+         */
         Assert.assertTrue(changePass.changeMessage(mensaje, correct));
 
         Assert.assertTrue(changePass.subTitleIsDisplayed());
