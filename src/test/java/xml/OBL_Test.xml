@@ -27,13 +27,18 @@
 <!--                    <include name="compareProduct"/> &lt;!&ndash;CP5&ndash;&gt;-->
 <!--                </methods>-->
 <!--            </class>-->
-
-<!--            <class name="tests.TestChangeMyAccount">-->
-<!--                <methods>-->
+<!--                <class name="">-->
+<!--                    <methods>-->
+<!--                        <include name=""/>-->
+<!--                    </methods>-->
+<!--                </class>-->
+            <class name="tests.TestChangeMyAccount">
+                <methods>
+                    <include name="addUserAddress"/> <!-- CP8-->
 <!--                    <include name="modifyUserInfo"/> &lt;!&ndash; CP9&ndash;&gt;-->
 <!--                    <include name="changePassword"/> &lt;!&ndash; CP10&ndash;&gt;-->
-<!--                </methods>-->
-<!--            </class>-->
+                </methods>
+            </class>
         </classes>
     </test>
 <!--    <test name="Test in Firefox">-->

@@ -56,6 +56,10 @@ public class DPGeneral {
             datos = new Object[][]{
                     {"1", "4", "2000"}
             };
+        }else if(method.getName().equalsIgnoreCase("addUserAddress")){
+            datos = new Object[][]{
+                    {"Silvia", "Savat", "s.savat@gmail.com", "235", "Colonia", "Calle 1", "32155", "098989898"}
+            };
         }
         return datos;
     }

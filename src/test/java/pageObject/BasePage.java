@@ -39,6 +39,7 @@ public class BasePage extends BasePO{
     public CompareList goToCompareList(){ return navFoot.clickInCompareProducts(); }
     public MyAccount goToMyAccount(){ return bar.clickInMyAccount(); }
     public ChangePassword goToClickInChangePass(){ return menMyAc.clickInChangePassword(); }
+    public AddAddresses goToClickInAddresses() { return menMyAc.clickInAddAddresses(); }
 
     public void clickElement(WebElement webElement){
         SeleniumUtils.clickElement(webElement, wait);

@@ -36,4 +36,19 @@ public class TestChangeMyAccount extends BaseTestWhitLogin{
 
         homePage.clickToLogout();
     }
+
+    @Test(dataProvider = "DP_MyAccount", dataProviderClass = DPGeneral.class)
+    public void addUserAddress(String name, String ape, String email, String country, String city, String dir, String postalCode, String phone){
+        myAccount = homePage.goToMyAccount();
+        addAddress = myAccount.clickInAddAddresses();
+
+        address = addAddress.clickInAddNew();
+        addAddress = address.addNewAddress(name, ape, email, country, city, dir, postalCode, phone);
+
+        Assert.assertTrue(addAddress.subTitleIsDisplayed());
+        Assert.assertTrue(addAddress.subTitleContains("My account - Addresses"));
+        Assert.assertTrue(addAddress.newAddress(dir));
+        Assert.assertTrue(addAddress.newCityStateZip(city));
+        Assert.assertTrue(addAddress.newCityStateZip(postalCode));
+    }
 }

@@ -3,11 +3,11 @@ package pageObject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-//import utils.SeleniumUtils;
 
 public class MyAccount extends BasePage {
 
     protected ChangePassword changePassword;
+    protected AddAddresses addAddresses;
 
     @FindBy(name = "DateOfBirthDay")
     WebElement combo_day;
@@ -27,10 +27,15 @@ public class MyAccount extends BasePage {
     public MyAccount(WebDriver driver) {
         super(driver);
         changePassword = new ChangePassword(driver);
+        addAddresses = new AddAddresses(driver);
     }
 
     public ChangePassword clickInChangePassword() {
         return changePassword.goToClickInChangePass();
+    }
+
+    public AddAddresses clickInAddAddresses() {
+        return addAddresses.goToClickInAddresses();
     }
 
     public void changeUserInfo(String day, String month, String year){

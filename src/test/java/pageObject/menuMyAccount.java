@@ -17,6 +17,9 @@ public class menuMyAccount {
     @FindBy(partialLinkText = "Change password")
     WebElement menu_changePass;
 
+    @FindBy(partialLinkText = "Addresses")
+    WebElement menu_Addresses;
+
     public menuMyAccount(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, 10);
@@ -29,5 +32,9 @@ public class menuMyAccount {
         return new ChangePassword(driver);
     }
 
-
+    public AddAddresses clickInAddAddresses() {
+        SeleniumUtils.clickElement(menu_Addresses, wait);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h1")));
+        return new AddAddresses(driver);
+    }
 }

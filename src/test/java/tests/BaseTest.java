@@ -30,6 +30,8 @@ public class BaseTest {
     protected CompareList compareList;
     protected MyAccount myAccount;
     protected ChangePassword changePass;
+    protected AddAddresses addAddress;
+    protected Address address;
 
     protected GetProperties properties = new GetProperties();
 
