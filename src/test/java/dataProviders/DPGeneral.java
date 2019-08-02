@@ -75,4 +75,16 @@ public class DPGeneral {
         }
         return datos;
     }
+
+    @DataProvider(name = "DP_ContactUs")
+    public Object[][] dpContactUs(Method method){
+        Object[][] datos = null;
+        if(method.getName().equalsIgnoreCase("contactUs")){
+            datos = new Object[][]{
+                    {"", "Enter enquiry", false},
+                    {"Buenas tardes, mensaje a quien corresponda y/o administre esta página.  Mensaje Test", "Your enquiry has been successfully sent to the store owner.", true}
+            };
+        }
+        return datos;
+    }
 }

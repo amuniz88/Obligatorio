@@ -56,5 +56,7 @@ public class TestChangeMyAccount extends BaseTestWhitLogin{
         Assert.assertTrue(addAddress.newAddress(dir));
         Assert.assertTrue(addAddress.newCityStateZip(city));
         Assert.assertTrue(addAddress.newCityStateZip(postalCode));
+
+        homePage.clickToLogout();
     }
 }

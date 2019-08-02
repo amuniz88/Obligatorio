@@ -41,6 +41,11 @@
 <!--                    <include name="changePassword"/> &lt;!&ndash; CP10&ndash;&gt;-->
 <!--                </methods>-->
 <!--            </class>-->
+            <class name="tests.TestContactUs">
+                <methods>
+                    <include name="contactUs"/>
+                </methods>
+            </class>
         </classes>
     </test>
 <!--    <test name="Test in Firefox">-->

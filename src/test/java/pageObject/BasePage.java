@@ -36,8 +36,9 @@ public class BasePage extends BasePO{
         return search.buscarProducto(producto);
     }
     public WishList goToWishList(){ return bar.clickInWishList(); }
-    public CompareList goToCompareList(){ return navFoot.clickInCompareProducts(); }
     public MyAccount goToMyAccount(){ return bar.clickInMyAccount(); }
+    public CompareList goToCompareList(){ return navFoot.clickInCompareProducts(); }
+    public Contact goToContact() { return navFoot.clickInContactUs(); }
     public ChangePassword goToClickInChangePass(){ return menMyAc.clickInChangePassword(); }
     public AddAddresses goToClickInAddresses() { return menMyAc.clickInAddAddresses(); }
 

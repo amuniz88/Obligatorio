@@ -33,6 +33,7 @@ public class BaseTest {
     protected AddAddresses addAddress;
     protected Address address;
     protected EmailToFriend emailToFriend;
+    protected Contact contact;
 
     protected GetProperties properties = new GetProperties();
 

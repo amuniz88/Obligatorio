@@ -35,5 +35,7 @@ public class TestAddToWishList extends BaseTestWhitLogin {
         //Asserts dobles dependiendo del contenido del DataProvider.  Se prueba envío incorrecto y envío correcto
         Assert.assertTrue(emailToFriend.messageReturnIsDisplayed(correcto));
         Assert.assertTrue(emailToFriend.messageReturnContains(contenido, correcto));
+
+        homePage.clickToLogout();
     }
 }

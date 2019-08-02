@@ -16,6 +16,9 @@ public class NavigateFooter {
     @FindBy(partialLinkText = "Compare products list")
     WebElement linkCompareProd;
 
+    @FindBy(partialLinkText = "Contact us")
+    WebElement linkContactUs;
+
     public NavigateFooter(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, 10);
@@ -26,5 +29,11 @@ public class NavigateFooter {
         SeleniumUtils.scrollIntoView(driver, linkCompareProd);
         SeleniumUtils.clickElement(linkCompareProd, wait);
         return new CompareList(driver);
+    }
+
+    public Contact clickInContactUs(){
+        SeleniumUtils.scrollIntoView(driver, linkContactUs);
+        SeleniumUtils.clickElement(linkContactUs, wait);
+        return new Contact(driver);
     }
 }
