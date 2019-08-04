@@ -11,7 +11,7 @@ import utils.SeleniumUtils;
 
 public class menuMyAccount {
 
-    protected WebDriver driver;
+    protected static WebDriver driver;
     protected WebDriverWait wait;
 
     @FindBy(partialLinkText = "Change password")
@@ -21,7 +21,7 @@ public class menuMyAccount {
     WebElement menu_Addresses;
 
     public menuMyAccount(WebDriver driver) {
-        this.driver = driver;
+        menuMyAccount.driver = driver;
         wait = new WebDriverWait(driver, 10);
         PageFactory.initElements(driver, this);
     }

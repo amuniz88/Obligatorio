@@ -17,6 +17,7 @@
         <webdriver.extension.plugin.version>3.1.1</webdriver.extension.plugin.version>
         <webdriverextencion.version>3.3.0</webdriverextencion.version>
         <version.chromdriver>75.0.3770.90</version.chromdriver>
+        <version.avent>4.0.9</version.avent>
     </properties>
 
     <dependencies>
@@ -32,6 +33,11 @@
             <artifactId>testng</artifactId>
             <version>${testng.version}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>${version.avent}</version>
         </dependency>
         <dependency>
             <groupId>com.github.webdriverextensions</groupId>

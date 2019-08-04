@@ -11,7 +11,7 @@ import utils.SeleniumUtils;
 
 public class NavigateBar {
 
-    protected WebDriver driver;
+    protected static WebDriver driver;
     protected WebDriverWait wait;
 //    protected NavigateBar bar;
 //    protected static String productName;
@@ -32,7 +32,7 @@ public class NavigateBar {
     WebElement linkMyAccount;
 
     public NavigateBar(WebDriver driver) {
-        this.driver = driver;
+        NavigateBar.driver = driver;
         wait = new WebDriverWait(driver, 10);
         PageFactory.initElements(driver, this);
     }

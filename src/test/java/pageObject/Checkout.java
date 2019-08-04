@@ -1,8 +1,6 @@
 package pageObject;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -42,8 +40,11 @@ public class Checkout extends BasePage{
     @FindBy(className = "payment-info-next-step-button")
     WebElement btn_Continuar5;
 
-    @FindBy(className = "confirm-order-next-step-button")
+    Alert alert;
+
+//    @FindBy(className = "confirm-order-next-step-button")
 //    @FindBy(xpath = "//input[@onclick='ConfirmOrder.save()']")
+    @FindBy(xpath = "//input[@class='button-1 confirm-order-next-step-button']")
     WebElement btn_ContinuarFinal;
 
     @FindBy(how = How.ID, using = "CreditCardType")
@@ -139,8 +140,15 @@ public class Checkout extends BasePage{
         }
         scrollIntoView(btn_ContinuarFinal);
 
+        wait.until(ExpectedConditions.elementToBeClickable(btn_ContinuarFinal));
+
         clickElement(btn_ContinuarFinal);
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[class='order-number']")));
+
+        while (isAlertPresent() == true){
+            alert.accept();
+            clickElement(btn_ContinuarFinal);
+        }
+
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("order-number")));
     }
 
@@ -149,5 +157,16 @@ public class Checkout extends BasePage{
 
         clickElement(linkOrderDetails);
         return new MyOrder(driver);
+    }
+
+    public boolean isAlertPresent(){
+        try {
+            alert = waitAlert.until(ExpectedConditions.alertIsPresent());
+            System.out.println(alert + "try");
+            return true;
+        }catch (TimeoutException te){
+            System.out.println(alert + "catch");
+            return false;
+        }
     }
 }

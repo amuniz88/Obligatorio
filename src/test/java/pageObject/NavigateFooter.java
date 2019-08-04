@@ -9,7 +9,7 @@ import utils.SeleniumUtils;
 
 public class NavigateFooter {
 
-    protected WebDriver driver;
+    protected static WebDriver driver;
     protected WebDriverWait wait;
     protected NavigateFooter navFoot;
 
@@ -20,7 +20,7 @@ public class NavigateFooter {
     WebElement linkContactUs;
 
     public NavigateFooter(WebDriver driver) {
-        this.driver = driver;
+        NavigateFooter.driver = driver;
         wait = new WebDriverWait(driver, 10);
         PageFactory.initElements(driver, this);
     }

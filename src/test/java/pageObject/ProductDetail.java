@@ -59,6 +59,7 @@ public class ProductDetail extends BasePage{
             order.setCantidad(Integer.valueOf(cant));
         }
 
+//        order.setPrecio(Double.valueOf(precio.getText().substring("$", "")));
         order.setPrecio(Double.valueOf(precio.getText().replace("$", "")));
 
         clickElement(btn_Add);

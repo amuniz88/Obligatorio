@@ -6,12 +6,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePO {
 
-    protected WebDriver driver;
+    protected static WebDriver driver;
     protected WebDriverWait wait;
+    protected WebDriverWait waitAlert;
 
     public BasePO(WebDriver driver){
-        this.driver = driver;
+        BasePO.driver = driver;
         wait = new WebDriverWait(driver, 30);
+        waitAlert = new WebDriverWait(driver, 5);
         PageFactory.initElements(driver, this);
     }
 }
