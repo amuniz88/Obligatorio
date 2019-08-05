@@ -4,10 +4,15 @@ import dataProviders.DPGeneral;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.lang.reflect.Method;
+
 public class TestChangeMyAccount extends BaseTestWhitLogin{
 
     @Test(dataProvider = "DP_MyAccount", dataProviderClass = DPGeneral.class)
-    public void changePassword(String oldPass, String newPass, String confirmPass, String mensaje, boolean correct){
+    public void changePassword(String oldPass, String newPass, String confirmPass, String mensaje, boolean correct,
+                               Method method) throws InterruptedException {
+        extentTest = extentReports.createTest(method.getName());
+
         myAccount = homePage.goToMyAccount();
         changePass = myAccount.clickInChangePassword();
 
@@ -29,7 +34,9 @@ public class TestChangeMyAccount extends BaseTestWhitLogin{
     }
 
     @Test(dataProvider = "DP_MyAccount", dataProviderClass = DPGeneral.class)
-    public void modifyUserInfo(String day, String month, String year){
+    public void modifyUserInfo(String day, String month, String year, Method method) throws InterruptedException {
+        extentTest = extentReports.createTest(method.getName());
+
         myAccount = homePage.goToMyAccount();
 
         myAccount.changeUserInfo(day, month, year);
@@ -44,7 +51,10 @@ public class TestChangeMyAccount extends BaseTestWhitLogin{
     }
 
     @Test(dataProvider = "DP_MyAccount", dataProviderClass = DPGeneral.class)
-    public void addUserAddress(String name, String ape, String email, String country, String city, String dir, String postalCode, String phone){
+    public void addUserAddress(String name, String ape, String email, String country, String city, String dir, String postalCode,
+                               String phone, Method method) throws InterruptedException {
+        extentTest = extentReports.createTest(method.getName());
+
         myAccount = homePage.goToMyAccount();
         addAddress = myAccount.clickInAddAddresses();
 

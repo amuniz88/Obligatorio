@@ -9,7 +9,7 @@ public class DPGeneral {
     @DataProvider(name = "DP_Usuario")
     public Object[][] dpUsuario(){
         return new Object[][]{
-            {"s.savat6@gmail.com", "F", "Silvia6", "Savat6", "15", "3", "1999", "Savatcom", "123456", "123456", false}
+            {"e.muvida@gmail.com", "F", "Emilia", "Muvida", "15", "3", "1999", "Savatcom", "123456", "123456", false}
         };
     }
 
@@ -58,7 +58,7 @@ public class DPGeneral {
             };
         }else if(method.getName().equalsIgnoreCase("addUserAddress")){
             datos = new Object[][]{
-                    {"Silvia", "Savat6", "s.savat6@gmail.com", "235", "Colonia", "Calle 1", "32155", "098989898"}
+                    {"Emilia", "Muvida", "e.muvida@gmail.com", "235", "Colonia", "Calle 1", "32155", "098989898"}
             };
         }
         return datos;

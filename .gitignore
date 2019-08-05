@@ -1,3 +1,5 @@
 .idea/
 .drivers/
 *.iml
+reports/*
+!reports/.gitkeep

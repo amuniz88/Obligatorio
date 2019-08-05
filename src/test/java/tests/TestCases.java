@@ -4,10 +4,17 @@ import dataProviders.DPGeneral;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.lang.reflect.Method;
+
 public class TestCases extends BaseTestWhitLogin{
 
     @Test(dataProvider = "DP_Producto", dataProviderClass = DPGeneral.class)
-    public void checkoutEfectivo(String producto, String size, String color, String gift, String cant, String country, String postal, String r_shopp, String r_Pay, String cardType, String cardNom, String cardNum, String expMonth, String expYear, String cardCode, boolean term, boolean samAddress, String city, String address, String postalCode, String phone){
+    public void checkoutEfectivo(String producto, String size, String color, String gift, String cant, String country, String postal,
+                                 String r_shopp, String r_Pay, String cardType, String cardNom, String cardNum, String expMonth, String expYear,
+                                 String cardCode, boolean term, boolean samAddress, String city, String address, String postalCode, String phone,
+                                 Method method) throws InterruptedException {
+        extentTest = extentReports.createTest(method.getName());
+
         searchR = homePage.goTobuscarProducto(producto);
 
         prodDet = searchR.selectProd(producto);
@@ -31,7 +38,12 @@ public class TestCases extends BaseTestWhitLogin{
     }
 
     @Test(dataProvider = "DP_Producto", dataProviderClass = DPGeneral.class)
-    public void checkoutTarjeta(String producto, String size, String color, String gift, String cant, String country, String postal, String r_shopp, String r_Pay, String cardType, String cardNom, String cardNum, String expMonth, String expYear, String cardCode, boolean term, boolean samAddress, String city, String address, String postalCode, String phone){
+    public void checkoutTarjeta(String producto, String size, String color, String gift, String cant, String country, String postal, String r_shopp,
+                                String r_Pay, String cardType, String cardNom, String cardNum, String expMonth, String expYear, String cardCode,
+                                boolean term, boolean samAddress, String city, String address, String postalCode, String phone,
+                                Method method) throws InterruptedException {
+
+
         searchR = homePage.goTobuscarProducto(producto);
         prodDet = searchR.selectProd(producto);
         shopCart = prodDet.addToCart(size, color, cant);

@@ -92,7 +92,6 @@ public class Checkout extends BasePage{
             clickElement(check_SamAddress);
         }
 
-        System.out.println(input_city.isDisplayed());
         if(input_city.isDisplayed() == true){
             selectByValue(input_Country, country);
             setText(input_city, city);

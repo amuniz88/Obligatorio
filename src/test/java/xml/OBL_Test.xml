@@ -4,10 +4,10 @@
 <suite name="SuiteTesst-Obligatorio" verbose="1" parallel="tests" thread-count="2">
 
     <parameter name="pass" value="123456"/>
-    <parameter name="user" value="s.savat6@gmail.com"></parameter>
+    <parameter name="user" value="s.savat7@gmail.com"></parameter>
 
-    <parameter name="browser" value="firefox"/>              <!-- (firefox)-->
-<!--    <parameter name="browser" value="chrome"/>              &lt;!&ndash; (chrome)&ndash;&gt;-->
+<!--    <parameter name="browser" value="firefox"/>              &lt;!&ndash; (firefox)&ndash;&gt;-->
+    <parameter name="browser" value="chrome"/>              <!-- (chrome)-->
     <test name="Test in Chrome">
         <classes>
             <class name="tests.TestRegistroUsuario">
@@ -46,44 +46,4 @@
             </class>
         </classes>
     </test>
-<!--    <test name="Test in Firefox">-->
-<!--        <parameter name="browser" value="firefox"></parameter>-->
-<!--        <classes>-->
-<!--            <class name="tests.TestRegistroUsuario">-->
-<!--                <methods>-->
-<!--                    <include name="registraUsuario"/>       &lt;!&ndash;CP1&ndash;&gt;-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--            <class name="tests.TestCases">-->
-<!--                <methods>-->
-<!--                    <include name="checkoutEfectivo"/>      &lt;!&ndash;CP2&ndash;&gt;-->
-<!--                    <include name="checkoutTarjeta"/>       &lt;!&ndash;CP3&ndash;&gt;-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--            <class name="tests.TestAddToWishList">-->
-<!--                <methods>-->
-<!--                    <include name="sendEmailToFriend"/>     &lt;!&ndash; CP6&ndash;&gt;-->
-<!--                    <include name="addToWishList"/>         &lt;!&ndash;CP4&ndash;&gt;-->
-<!--                    <include name=""/>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--            <class name="tests.TestCompareProduct">-->
-<!--                <methods>-->
-<!--                    <include name="compareProduct"/>        &lt;!&ndash;CP5&ndash;&gt;-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--            <class name="tests.TestChangeMyAccount">-->
-<!--                <methods>-->
-<!--                    <include name="addUserAddress"/>        &lt;!&ndash; CP8&ndash;&gt;-->
-<!--                    <include name="modifyUserInfo"/>        &lt;!&ndash; CP9&ndash;&gt;-->
-<!--                    <include name="changePassword"/>        &lt;!&ndash; CP10&ndash;&gt;-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--            <class name="tests.TestContactUs">-->
-<!--                <methods>-->
-<!--                    <include name="contactUs"/>             &lt;!&ndash; CP7&ndash;&gt;-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
 </suite>

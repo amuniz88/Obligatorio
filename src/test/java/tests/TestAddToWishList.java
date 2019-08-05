@@ -4,10 +4,14 @@ import dataProviders.DPGeneral;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.lang.reflect.Method;
+
 public class TestAddToWishList extends BaseTestWhitLogin {
 
     @Test(dataProvider = "DP_ProductList", dataProviderClass = DPGeneral.class)
-    public void addToWishList(String object, String prodItem1, String prodItem2){
+    public void addToWishList(String object, String prodItem1, String prodItem2, Method method) throws InterruptedException {
+        extentTest = extentReports.createTest(method.getName());
+
         searchR = homePage.goTobuscarProducto(object);
         searchR.addToWishList(prodItem1);
         searchR.addToWishList(prodItem2);
@@ -24,7 +28,9 @@ public class TestAddToWishList extends BaseTestWhitLogin {
     }
 
     @Test(dataProvider = "DP_SendEmail", dataProviderClass = DPGeneral.class)
-    public void sendEmailToFriend(String email, String msg, String contenido, boolean correcto){
+    public void sendEmailToFriend(String email, String msg, String contenido, boolean correcto, Method method) throws InterruptedException {
+        extentTest = extentReports.createTest(method.getName());
+
         wishList = homePage.goToWishList();
 
         emailToFriend = wishList.clickSendEmailToFriend();
