@@ -42,7 +42,7 @@ public class TestCases extends BaseTestWhitLogin{
                                 String r_Pay, String cardType, String cardNom, String cardNum, String expMonth, String expYear, String cardCode,
                                 boolean term, boolean samAddress, String city, String address, String postalCode, String phone,
                                 Method method) throws InterruptedException {
-
+        extentTest = extentReports.createTest(method.getName());
 
         searchR = homePage.goTobuscarProducto(producto);
         prodDet = searchR.selectProd(producto);
