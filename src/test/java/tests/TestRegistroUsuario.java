@@ -16,5 +16,7 @@ public class TestRegistroUsuario extends BaseTest{
         Assert.assertTrue(registroU.subTitleIsDisplayed());
         Assert.assertTrue(registroU.subTitleContains("Register"));
         Assert.assertTrue(registroU.continueIsDisplayed());
+
+        homePage.clickToLogout();
     }
 }

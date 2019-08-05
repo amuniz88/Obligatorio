@@ -9,7 +9,7 @@ public class DPGeneral {
     @DataProvider(name = "DP_Usuario")
     public Object[][] dpUsuario(){
         return new Object[][]{
-            {"s.savat@gmail.com", "F", "Silvia", "Savat", "15", "3", "1999", "Savatcom", "123456", "123456", false}
+            {"s.savat6@gmail.com", "F", "Silvia6", "Savat6", "15", "3", "1999", "Savatcom", "123456", "123456", false}
         };
     }
 
@@ -18,11 +18,11 @@ public class DPGeneral {
         Object[][] datos = null;
         if(method.getName().equalsIgnoreCase("checkoutEfectivo")) {
             datos = new Object[][]{
-                    {"adidas", "22", "azul", "2", "1", "234", "21654", "1", "2", "visa", "Bestcard", "4348630111063811", "6", "2025", "202", true, false}
+                    {"adidas", "22", "azul", "2", "1", "235", "21654", "1", "2", "visa", "Bestcard", "4348630111063811", "6", "2025", "202", true, false, "Montevideo", "18 de Julio 123", "20202", "098989898"}
             };
         }else if(method.getName().equalsIgnoreCase("checkoutTarjeta")){
             datos = new Object[][]{
-                    {"Hat", "36", "", "1", "2", "234", "21654", "1", "1", "visa", "Bestcard", "4348630111063811", "6", "2025", "202", true, false}
+                    {"Hat", "36", "", "1", "2", "235", "21654", "1", "1", "visa", "Bestcard", "4348630111063811", "6", "2025", "202", true, false, "Montevideo", "18 de Julio 123", "20202", "098989898"}
             };
         }
         return datos;
@@ -58,7 +58,7 @@ public class DPGeneral {
             };
         }else if(method.getName().equalsIgnoreCase("addUserAddress")){
             datos = new Object[][]{
-                    {"Silvia", "Savat", "s.savat@gmail.com", "235", "Colonia", "Calle 1", "32155", "098989898"}
+                    {"Silvia", "Savat6", "s.savat6@gmail.com", "235", "Colonia", "Calle 1", "32155", "098989898"}
             };
         }
         return datos;

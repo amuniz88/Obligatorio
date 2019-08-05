@@ -42,8 +42,6 @@ public class Checkout extends BasePage{
 
     Alert alert;
 
-//    @FindBy(className = "confirm-order-next-step-button")
-//    @FindBy(xpath = "//input[@onclick='ConfirmOrder.save()']")
     @FindBy(xpath = "//input[@class='button-1 confirm-order-next-step-button']")
     WebElement btn_ContinuarFinal;
 
@@ -68,16 +66,39 @@ public class Checkout extends BasePage{
     @FindBy(partialLinkText = "Click here for order details.")
     WebElement linkOrderDetails;
 
+    @FindBy(id = "BillingNewAddress_City")
+    WebElement input_city;
+
+    @FindBy(id = "BillingNewAddress_Address1")
+    WebElement input_address;
+
+    @FindBy(id = "BillingNewAddress_ZipPostalCode")
+    WebElement input_PostalCode;
+
+    @FindBy(id = "BillingNewAddress_PhoneNumber")
+    WebElement input_Phone;
+
+    @FindBy(id = "BillingNewAddress_CountryId")
+    WebElement input_Country;
 
     public Checkout(WebDriver driver){
         super(driver);
     }
 
     //Paso 1
-    public void billingAddress(boolean samAddress) {
+    public void billingAddress(boolean samAddress, String country, String city, String address, String postalCode, String phone) {
 
         if(samAddress == false){
             clickElement(check_SamAddress);
+        }
+
+        System.out.println(input_city.isDisplayed());
+        if(input_city.isDisplayed() == true){
+            selectByValue(input_Country, country);
+            setText(input_city, city);
+            setText(input_address, address);
+            setText(input_PostalCode, postalCode);
+            setText(input_Phone, phone);
         }
 
         clickElement(btn_Continuar1);
@@ -162,10 +183,8 @@ public class Checkout extends BasePage{
     public boolean isAlertPresent(){
         try {
             alert = waitAlert.until(ExpectedConditions.alertIsPresent());
-            System.out.println(alert + "try");
             return true;
         }catch (TimeoutException te){
-            System.out.println(alert + "catch");
             return false;
         }
     }

@@ -4,11 +4,11 @@
 <suite name="SuiteTesst-Obligatorio" verbose="1" parallel="tests" thread-count="2">
 
     <parameter name="pass" value="123456"/>
-    <parameter name="user" value="s.savat@gmail.com"></parameter>
+    <parameter name="user" value="s.savat6@gmail.com"></parameter>
 
-    <parameter name="browser" value="chrome"/>
+    <parameter name="browser" value="firefox"/>              <!-- (firefox)-->
+<!--    <parameter name="browser" value="chrome"/>              &lt;!&ndash; (chrome)&ndash;&gt;-->
     <test name="Test in Chrome">
-<!--        <parameter name="browser" value="chrome"/>-->
         <classes>
             <class name="tests.TestRegistroUsuario">
                 <methods>
@@ -46,7 +46,7 @@
             </class>
         </classes>
     </test>
-    <test name="Test in Firefox">
+<!--    <test name="Test in Firefox">-->
 <!--        <parameter name="browser" value="firefox"></parameter>-->
 <!--        <classes>-->
 <!--            <class name="tests.TestRegistroUsuario">-->
@@ -85,5 +85,5 @@
 <!--                </methods>-->
 <!--            </class>-->
 <!--        </classes>-->
-    </test>
+<!--    </test>-->
 </suite>
