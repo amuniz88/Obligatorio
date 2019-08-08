@@ -13,8 +13,6 @@ public class NavigateBar {
 
     protected static WebDriver driver;
     protected WebDriverWait wait;
-//    protected NavigateBar bar;
-//    protected static String productName;
 
     @FindBy(partialLinkText = "Register")
     WebElement linkRegister;
