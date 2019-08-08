@@ -88,11 +88,11 @@ public class Checkout extends BasePage{
     //Paso 1
     public void billingAddress(boolean samAddress, String country, String city, String address, String postalCode, String phone) {
 
-        if(samAddress == false){
+        if(!samAddress){
             clickElement(check_SamAddress);
         }
 
-        if(input_city.isDisplayed() == true){
+        if(input_city.isDisplayed()){
             selectByValue(input_Country, country);
             setText(input_city, city);
             setText(input_address, address);

@@ -4,7 +4,7 @@
 <suite name="SuiteTesst-Obligatorio" verbose="1" parallel="tests" thread-count="2">
 
     <parameter name="pass" value="123456"/>
-    <parameter name="user" value="s.savat7@gmail.com"></parameter>
+    <parameter name="user" value="s.savat7@gmail.com"/>
 
 <!--    <parameter name="browser" value="firefox"/>              &lt;!&ndash; (firefox)&ndash;&gt;-->
     <parameter name="browser" value="chrome"/>              <!-- (chrome)-->

@@ -13,8 +13,6 @@ public class NavigateBar {
 
     protected static WebDriver driver;
     protected WebDriverWait wait;
-//    protected NavigateBar bar;
-//    protected static String productName;
 
     @FindBy(partialLinkText = "Register")
     WebElement linkRegister;
@@ -38,7 +36,6 @@ public class NavigateBar {
     }
 
     public PORegistrarUsuario clickInRegister(){
-        wait.until(ExpectedConditions.elementToBeClickable(linkRegister));
         SeleniumUtils.clickElement(linkRegister, wait);
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h1")));

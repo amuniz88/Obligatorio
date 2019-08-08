@@ -2,12 +2,12 @@ package objects;
 
 public class Order {
 
-    public static int pos;
-    public static int numOrder;
-    public static String nombre;
-    public static double precio;
-    public static int cantidad;
-    public static boolean gift;
+    private static int pos;
+    private static int numOrder;
+    private static String nombre;
+    private static double precio;
+    private static int cantidad;
+    private static boolean gift;
 
     public int getPos() {
         return pos;

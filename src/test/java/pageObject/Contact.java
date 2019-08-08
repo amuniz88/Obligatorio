@@ -48,7 +48,7 @@ public class Contact extends BasePage {
     }
 
     public boolean msgResultIsDisplayed(boolean correcto){
-        if(correcto == true){
+        if(correcto){
             if(lbl_msgOK.isDisplayed()){
                 return true;
             }
@@ -61,7 +61,7 @@ public class Contact extends BasePage {
     }
 
     public boolean msgResultContains(String contenido, boolean correcto){
-        if(correcto == true){
+        if(correcto){
             if(lbl_msgOK.getText().contains(contenido)){
                 return true;
             }

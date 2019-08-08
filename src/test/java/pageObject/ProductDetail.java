@@ -11,13 +11,13 @@ public class ProductDetail extends BasePage{
     @FindBy(xpath = "//select[contains(@id,'product_attribute')]")
     WebElement combo_Size;
 
-    @FindBy(css = "[title=\"Red\"]")
+    @FindBy(css = "[title='Red']")
     WebElement colorRed;
 
-    @FindBy(css = "[title=\"Blue\"]")
+    @FindBy(css = "[title='Blue']")
     WebElement colorBlue;
 
-    @FindBy(css = "[title=\"Silver\"]")
+    @FindBy(css = "[title='Silver']")
     WebElement colorSilver;
 
     @FindBy(className = "qty-input")
@@ -29,7 +29,7 @@ public class ProductDetail extends BasePage{
     @FindBy(xpath = "//input[@class='button-1 add-to-cart-button']")
     WebElement btn_Add;
 
-    @FindBy(css = ".content [href=\"/cart\"]")
+    @FindBy(css = ".content [href='/cart']")
     WebElement lnk_ShopCart;
 
     public ProductDetail(WebDriver driver) {
