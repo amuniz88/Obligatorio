@@ -9,7 +9,7 @@ public class DPGeneral {
     @DataProvider(name = "DP_Usuario")
     public Object[][] dpUsuario(){
         return new Object[][]{
-            {"e.muvida@gmail.com", "F", "Emilia", "Muvida", "15", "3", "1999", "Savatcom", "123456", "123456", false}
+            {"e.muvida6@gmail.com", "F", "Emilia", "Muvida", "15", "3", "1999", "Savatcom", "123456", "123456", false}
         };
     }
 
@@ -49,8 +49,8 @@ public class DPGeneral {
         if(method.getName().equalsIgnoreCase("changePassword")){
             datos = new Object[][]{
                     {"123", "222222", "222222", "Old password doesn't match", false},
-                    {"123456", "123456", "123456", "You entered the password that is the same as one of the last passwords you used. Please create a new password.", false},
-                    {"123456", "1234567", "1234567", "Password was changed", true}
+                    {"1234567", "1234567", "1234567", "You entered the password that is the same as one of the last passwords you used. Please create a new password.", false},
+                    {"1234567", "12345678", "1234567", "Password was changed", true}
             };
         }else if(method.getName().equalsIgnoreCase("modifyUserInfo")){
             datos = new Object[][]{
