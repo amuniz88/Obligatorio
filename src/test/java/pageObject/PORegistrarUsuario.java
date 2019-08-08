@@ -81,7 +81,7 @@ public class PORegistrarUsuario extends BasePage{
         setText(txt_Email, email);
         setText(txt_Company, company);
 
-        if(check == true) {
+        if(check) {
             clickElement(chk_Newsletter);
         }
 
