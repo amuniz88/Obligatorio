@@ -36,7 +36,6 @@ public class NavigateBar {
     }
 
     public PORegistrarUsuario clickInRegister(){
-        wait.until(ExpectedConditions.elementToBeClickable(linkRegister));
         SeleniumUtils.clickElement(linkRegister, wait);
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h1")));
