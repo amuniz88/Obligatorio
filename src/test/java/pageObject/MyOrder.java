@@ -29,14 +29,14 @@ public class MyOrder extends BasePage {
     public MyOrder(WebDriver driver){
         super(driver);
         orders = new ArrayList<>();
-        WebElement tabla = findElement(By.cssSelector("div .data-table tbody"));
+        WebElement tabla = findElement(By.cssSelector(".data-table tbody"));
         List<WebElement> filas = tabla.findElements(By.cssSelector("tr"));
         for(WebElement fila : filas){
             orders.add(new OrderList(fila));
         }
 
         SeccionTotales = new ArrayList<>();
-        WebElement tablaSecTot = findElement(By.cssSelector("div .cart-total tbody"));
+        WebElement tablaSecTot = findElement(By.cssSelector(".cart-total tbody"));
         List<WebElement> filasTotales = tablaSecTot.findElements(By.cssSelector("tr"));
         for(WebElement filaTot : filasTotales){
             SeccionTotales.add(new OrderList(filaTot));
