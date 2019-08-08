@@ -39,7 +39,7 @@ public class ShoppingCart extends BasePage{
         selectByValue(c_Country, country);
         setText(postalCode, postal);
 
-        if(term == true) {
+        if(term) {
             clickElement(chk_terminos);
         }
 
