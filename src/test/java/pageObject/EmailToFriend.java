@@ -47,7 +47,7 @@ public class EmailToFriend extends BasePage{
     }
 
     public boolean messageReturnIsDisplayed(boolean correcto){
-        if(correcto == true){
+        if(correcto){
             if (lbl_mensajeOK.isDisplayed())
                 return true;
         }else{
