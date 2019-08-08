@@ -29,7 +29,7 @@ public class ProductDetail extends BasePage{
     @FindBy(xpath = "//input[@class='button-1 add-to-cart-button']")
     WebElement btn_Add;
 
-    @FindBy(css = ".content [href='/cart']")
+    @FindBy(css = "a.ico-cart")
     WebElement lnk_ShopCart;
 
     public ProductDetail(WebDriver driver) {
